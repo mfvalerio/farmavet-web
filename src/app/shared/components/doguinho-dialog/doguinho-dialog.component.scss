@@ -1,0 +1,41 @@
+.container {
+    max-height: 600px;
+    width: 1200px;
+}
+
+table {
+    width: 100%;
+}
+
+th.th-button {
+    width: 80px;
+}
+
+th.th-button button{
+    margin-left: 30px;
+}
+
+input {
+    background: white;
+    border: 0 white;
+    border-bottom: 1px black solid;
+    outline: 0;
+    margin: 0px 5px 0px 5px;
+}
+
+input:disabled {
+    border-bottom: 0 white !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+*:disabled {
+    cursor: default;
+    pointer-events: none;
+}

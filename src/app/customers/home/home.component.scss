@@ -1,0 +1,52 @@
+.home {
+    width: 100%;
+    height: 100%;
+    padding-top: 15%;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    background-image: url("../../../assets/images/doguinho.svg");
+    background-repeat: no-repeat;
+    background-size: 300px;
+    margin: auto;
+}
+
+.dot-typing {
+    margin: auto;
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: BLACK;
+    color: BLACK;
+    box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    animation: dotTyping 1.5s infinite linear;
+  }
+  
+  @keyframes dotTyping {
+    0% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+    16.667% {
+      box-shadow: 9984px -10px 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+    33.333% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+    50% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px -10px 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+    66.667% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+    83.333% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px -10px 0 0 BLACK;
+    }
+    100% {
+      box-shadow: 9984px 0 0 0 BLACK, 9999px 0 0 0 BLACK, 10014px 0 0 0 BLACK;
+    }
+  }
+  

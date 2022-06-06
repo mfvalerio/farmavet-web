@@ -1,0 +1,15 @@
+<div style="padding: 25px;">
+    <h3>Escolha a data e horário da consulta</h3>
+    <mat-form-field appearance="fill">
+        <mat-label>Insira a data</mat-label>
+        <input style="background-color: white;" matInput [matDatepicker]="dp3" [(ngModel)]="appointmentDate">
+        <mat-datepicker-toggle style="background-color: white;" matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker style="background-color: white;" #dp3></mat-datepicker>
+    </mat-form-field>
+    <div style="margin-bottom: 10px;">
+        <ngx-timepicker-field [format]="24" [(ngModel)]="appointmentHour"></ngx-timepicker-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [disabled]="appointmentDate == null || appointmentHour == null" mat-dialog-close color="primary" (click)="close()">Ok</button>
+</div>
