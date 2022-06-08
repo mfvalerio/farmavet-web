@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://farmavet-api.herokuapp.com/'
+  apiUrl: 'https://farmavet-api.herokuapp.com/'
 };
 
 /*
