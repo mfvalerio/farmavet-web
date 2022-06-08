@@ -15,7 +15,7 @@ export class CustomersService {
 
   private readonly API_CUSTOMERS = 'farmavet/customers';
   private readonly API_PETS = 'farmavet/pets';
-  private readonly API_APPOINTMENT = '${environment.apiUrl}/farmavet/consultations';
+  private readonly API_APPOINTMENT = 'farmavet/consultations';
 
 
   constructor(private httpClient: HttpClient) { }
