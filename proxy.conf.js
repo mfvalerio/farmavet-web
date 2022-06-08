@@ -1,7 +1,7 @@
 const PROXY_CONFIG = [
 {
   context: ['/farmavet'],
-  target: 'http://farmavet.herokuapp.com/',
+  target: 'http://farmavet-api.herokuapp.com/',
   secure: false,
   loglevel: 'debug',
   changeOrigin: true
