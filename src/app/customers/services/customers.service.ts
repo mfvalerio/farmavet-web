@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { first } from 'rxjs/operators';
 import { delay } from 'rxjs/operators';
 import { Consultation } from '../model/consultation';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -13,14 +14,15 @@ import { Consultation } from '../model/consultation';
 })
 export class CustomersService {
 
-  private readonly API_CUSTOMERS = 'farmavet/customers';
-  private readonly API_PETS = 'farmavet/pets';
-  private readonly API_APPOINTMENT = 'farmavet/consultations';
+  private readonly API_CUSTOMERS = environment.apiUrl + 'farmavet/customers';
+  private readonly API_PETS = environment.apiUrl + 'farmavet/pets';
+  private readonly API_APPOINTMENT = environment.apiUrl + 'farmavet/consultations';
 
 
   constructor(private httpClient: HttpClient) { }
 
   findAllCustomers() {
+    console.log(this.API_CUSTOMERS);
     return this.httpClient.get<Customer[]>(this.API_CUSTOMERS)
       .pipe(
         first(),
