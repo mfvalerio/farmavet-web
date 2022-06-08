@@ -21,6 +21,7 @@ export class CustomersService {
   constructor(private httpClient: HttpClient) { }
 
   findAllCustomers() {
+    console.log(this.API_CUSTOMERS);
     return this.httpClient.get<Customer[]>(this.API_CUSTOMERS)
       .pipe(
         first(),
