@@ -5,7 +5,6 @@ import { tap } from 'rxjs/operators';
 import { first } from 'rxjs/operators';
 import { delay } from 'rxjs/operators';
 import { Consultation } from '../model/consultation';
-import { environment } from 'src/environments/environment';
 
 
 
@@ -22,8 +21,7 @@ export class CustomersService {
   constructor(private httpClient: HttpClient) { }
 
   findAllCustomers() {
-    console.log(environment.apiUrl + this.API_CUSTOMERS);
-    return this.httpClient.get<Customer[]>(environment.apiUrl + this.API_CUSTOMERS)
+    return this.httpClient.get<Customer[]>(this.API_CUSTOMERS)
       .pipe(
         first(),
         delay(1000),
