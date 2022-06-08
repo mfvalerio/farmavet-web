@@ -1,0 +1,59 @@
+
+<div class="search">
+  
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Buscar por CPF</mat-label>
+    <input type="number" matInput placeholder="Ex. 41609345878" [(ngModel)]="cpf" (keyup)="search()">
+  </mat-form-field>
+
+  
+</div>
+<mat-card style="padding-bottom: 16px !important;">
+  <mat-toolbar color="primary">
+    <span>Consultas</span>
+  </mat-toolbar>
+
+  <div *ngIf="consultations$ | async  as consultations; else loading">
+    <table mat-table [dataSource]="consultations$" class="mat-elevation-z8">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let consultation"> {{consultation.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="dateTime">
+        <th mat-header-cell *matHeaderCellDef> Data e hora </th>
+        <td mat-cell *matCellDef="let consultation"> {{consultation.dateTime}} </td>
+      </ng-container>
+
+      Name Column
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome do cliente</th>
+        <td mat-cell *matCellDef="let consultation"> {{consultation.customer.name}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> CPF </th>
+        <td mat-cell *matCellDef="let consultation"> {{consultation.customer.cpf}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="pet">
+        <th mat-header-cell *matHeaderCellDef> Nome do pet </th>
+        <td mat-cell *matCellDef="let consultation"> {{consultation.pet.name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>

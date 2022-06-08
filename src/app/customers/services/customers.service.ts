@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { first } from 'rxjs/operators';
 import { delay } from 'rxjs/operators';
+import { Consultation } from '../model/consultation';
 
 
 
@@ -25,6 +26,15 @@ export class CustomersService {
         first(),
         delay(1000),
         tap(customer => console.log('Chegou customer', customer))
+      );
+  }
+
+  findAllConsultations() {
+    return this.httpClient.get<Consultation[]>(this.API_APPOINTMENT)
+      .pipe(
+        first(),
+        delay(1000),
+        tap(consultation => console.log('Chegou consultation', consultation))
       );
   }
 

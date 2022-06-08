@@ -15,13 +15,17 @@ import { CustomerFormUpdateComponent } from './customer-form-update/customer-for
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { MatInputModule } from '@angular/material/input';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { ConsultationsComponent } from './consultations/consultations.component';
 
 @NgModule({
   declarations: [
     CustomersComponent,
     CustomerFormComponent,
     CustomerFormUpdateComponent,
-    HomeComponent
+    HomeComponent,
+    AppointmentsComponent,
+    ConsultationsComponent
   ],
   imports: [
     CommonModule,

@@ -38,6 +38,10 @@ export class CustomersComponent implements OnInit {
     }
   }
 
+  onConsultations() {
+    this.router.navigate(['', 'consultations'], { relativeTo: this.route });
+  }
+
   onAdd() {
     this.router.navigate(['', 'new'], { relativeTo: this.route });
   }
@@ -62,14 +66,6 @@ export class CustomersComponent implements OnInit {
         data: errorMsg
       });
     }
-
-    this.customersService.findAllCustomersPets()
-      .pipe(
-        catchError(error => {
-          onError("Falha no carregamento.");
-          return of([])
-        })
-      );
 
     this.customersService.findAllCustomers()
       .subscribe({
