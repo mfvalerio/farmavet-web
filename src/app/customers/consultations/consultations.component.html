@@ -1,17 +1,23 @@
+<mat-card>
+  <mat-card-actions>
+    <br>
+    <button class="menu" mat-raised-button (click)="onCustomers()">ACESSAR CLIENTES</button>
+    <br><br><br>
+    </mat-card-actions>
+</mat-card>
 
-<div class="search">
-  
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Buscar por CPF</mat-label>
-    <input type="number" matInput placeholder="Ex. 41609345878" [(ngModel)]="cpf" (keyup)="search()">
-  </mat-form-field>
 
-  
-</div>
 <mat-card style="padding-bottom: 16px !important;">
   <mat-toolbar color="primary">
     <span>Consultas</span>
   </mat-toolbar>
+
+  <div class="search">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Buscar por CPF</mat-label>
+      <input type="number" matInput placeholder="Ex. 41609345878" [(ngModel)]="cpf" (keyup)="search()">
+    </mat-form-field>
+  </div>
 
   <div *ngIf="consultations$ | async  as consultations; else loading">
     <table mat-table [dataSource]="consultations$" class="mat-elevation-z8">

@@ -69,5 +69,8 @@ export class ConsultationsComponent implements OnInit {
     const final = this.consultations.filter(c => c.customer.cpf.includes(this.cpf || ''));
     this.consultations$.next(final);
   }
-
+  
+  onCustomers() {
+    this.router.navigate(['', 'customers'], { relativeTo: this.route });
+  }
 }
